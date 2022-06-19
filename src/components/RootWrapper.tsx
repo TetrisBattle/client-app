@@ -2,10 +2,10 @@ import { useTheme, Box } from '@mui/material'
 import Header from 'components/Header'
 
 interface IProps {
-	children?: React.ReactNode
+	children: React.ReactNode
 }
 
-const RootWrapper = ({ children }: IProps) => {
+export default function RootWrapper({ children }: IProps) {
 	const theme = useTheme()
 
 	return (
@@ -23,5 +23,3 @@ const RootWrapper = ({ children }: IProps) => {
 		</Box>
 	)
 }
-
-export default RootWrapper

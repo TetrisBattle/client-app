@@ -1,16 +1,21 @@
 import { observer } from 'mobx-react-lite'
-import { Box, Button, Typography } from '@mui/material'
+import {
+	Box,
+	Button,
+	Typography,
+} from '@mui/material'
 import { useStoreContext } from 'StoreContext'
 import DarkThemeButton from 'components/DarkThemeButton'
+import { useState } from 'react'
 
-const Home = () => {
+function Home() {
 	const { appStore } = useStoreContext()
 
 	return (
 		<Box sx={{ padding: 2 }}>
 			<Typography variant='h2'>Home</Typography>
-			<Button>Button</Button>
 			<DarkThemeButton />
+			<Button>Button</Button>
 		</Box>
 	)
 }

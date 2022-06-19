@@ -16,7 +16,7 @@ declare module '@mui/material/styles' {
 	}
 }
 
-const MuiTheme = (isDarkTheme: boolean) => {
+export default function MuiTheme(isDarkTheme: boolean) {
 	const theme = createTheme({
 		breakpoints: {
 			values: {
@@ -125,10 +125,45 @@ const MuiTheme = (isDarkTheme: boolean) => {
 							},
 						},
 					},
+					MuiDialog: {
+						defaultProps: {
+							fullWidth: true,
+							maxWidth: 'sm',
+						},
+					},
+					MuiDialogTitle: {
+						styleOverrides: {
+							root: {
+								display: 'flex',
+								justifyContent: 'space-between',
+								alignItems: 'center',
+								backgroundColor: theme.palette.primary.main,
+								color: theme.palette.primary.contrastText,
+								fontWeight: 'bold',
+								padding: '8px 8px 8px 16px',
+								cursor: 'grab',
+								'& .MuiIconButton-root': {
+									color: 'inherit'
+								}
+							},
+						},
+					},
+					MuiDialogContent: {
+						styleOverrides: {
+							root: {
+								padding: '16px !important',
+							},
+						},
+					},
+					MuiDialogActions: {
+						styleOverrides: {
+							root: {
+								padding: '16px',
+							},
+						},
+					},
 				},
 			}),
 		[isDarkTheme]
 	)
 }
-
-export default MuiTheme
