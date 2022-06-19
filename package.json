@@ -23,15 +23,13 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^14.2.0",
     "@types/jest": "^27.5.1",
-    "sass": "^1.52.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sass": "sass --watch --no-source-map src/styles/sass"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

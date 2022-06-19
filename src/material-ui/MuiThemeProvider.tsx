@@ -1,6 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material/styles'
 import MuiTheme from './MuiTheme'
 import { useStoreContext } from 'StoreContext'
 
@@ -13,11 +13,9 @@ function MuiThemeProvider({ children }: IProps) {
 	const theme = MuiTheme(isDarkTheme)
 
 	return (
-		<StyledEngineProvider injectFirst>
-			<ThemeProvider theme={theme}>
-				{children}
-			</ThemeProvider>
-		</StyledEngineProvider>
+		<ThemeProvider theme={theme}>
+			{children}
+		</ThemeProvider>
 	)
 }
 

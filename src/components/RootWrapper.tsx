@@ -7,6 +7,7 @@ interface IProps {
 
 const RootWrapper = ({ children }: IProps) => {
 	const theme = useTheme()
+
 	return (
 		<Box
 			sx={{
