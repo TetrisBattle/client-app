@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IconButton, IconButtonProps, Menu } from '@mui/material'
 
-interface IProps {
+interface Props extends IconButtonProps {
 	icon: JSX.Element
-	baseProps?: IconButtonProps
-	children: React.ReactNode
 }
 
-export default function MenuButton({ icon, baseProps, children }: IProps) {
+export default function MenuButton({ icon, children, ...baseProps }: Props) {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (

@@ -1,9 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import {
-	Box,
-	Button,
-	Typography,
-} from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { useStoreContext } from 'StoreContext'
 import DarkThemeButton from 'components/DarkThemeButton'
 import { useState } from 'react'

@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
-import { AppBar, Toolbar, Button, MenuItem, Typography, Box } from '@mui/material'
+import {
+	AppBar,
+	Toolbar,
+	Button,
+	MenuItem,
+	Typography,
+	Box,
+} from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import MenuButton from './MenuButton'
 import DarkThemeButton from './DarkThemeButton'
@@ -9,18 +16,41 @@ function Header() {
 
 	return (
 		<AppBar>
-			<Toolbar>
-				<Typography variant='h1' sx={{ flexGrow: 1 }}>Title</Typography>
-				<Box className='navButtons'>
-					{pages.map((page) => (
-						<Button key={page} component={Link} to={`/${page}`} variant='text'>
-							{page}
-						</Button>
-					))}
+			<Toolbar sx={{ p: 1 }}>
+				<Typography variant='h1' sx={{ pl: 1, flexGrow: 1 }}>
+					Title
+				</Typography>
+				<Box
+					sx={{
+						display: {
+							xs: 'none',
+							sm: 'unset',
+						},
+					}}
+				>
+					<Box sx={{ pr: 1 }}>
+						{pages.map((page) => (
+							<Button
+								key={page}
+								component={Link}
+								to={`/${page}`}
+								variant='text'
+								color='inherit'
+								sx={{ '&:hover': { bgcolor: 'transparent' }, fontSize: '1.25rem' }}
+							>
+								{page}
+							</Button>
+						))}
+					</Box>
 				</Box>
 				<MenuButton
+					sx={{
+						color: 'inherit',
+						display: {
+							sm: 'none',
+						},
+					}}
 					icon={<MenuIcon />}
-					baseProps={{ className: 'menuIcon' }}
 				>
 					{pages.map((page) => (
 						<MenuItem key={page} component={Link} to={`/${page}`}>
@@ -28,6 +58,7 @@ function Header() {
 						</MenuItem>
 					))}
 				</MenuButton>
+				<DarkThemeButton />
 			</Toolbar>
 		</AppBar>
 	)

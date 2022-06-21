@@ -1,13 +1,10 @@
 import { createContext, useContext } from 'react'
+import { ReactChildren } from 'interfaces/react'
 import RootStore from 'stores/RootStore'
 
 const StoreContext = createContext<RootStore>({} as RootStore)
 
-interface IProps {
-	children: React.ReactNode;
-}
-
-export function StoreContextProvider({ children }: IProps) {
+export function StoreContextProvider({ children }: ReactChildren) {
 	const rootStore = new RootStore()
 
 	return (

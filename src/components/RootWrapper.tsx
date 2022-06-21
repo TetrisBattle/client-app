@@ -1,22 +1,18 @@
-import { useTheme, Box } from '@mui/material'
+import { Box } from '@mui/material'
 import Header from 'components/Header'
+import { ReactChildren } from 'interfaces/react'
 
-interface IProps {
-	children: React.ReactNode
-}
-
-export default function RootWrapper({ children }: IProps) {
-	const theme = useTheme()
+export default function RootWrapper({ children }: ReactChildren) {
 
 	return (
 		<Box
-			sx={{
+			sx={(theme) => ({
 				bgcolor: theme.palette.background.default,
 				minHeight: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
 				color: theme.palette.text.primary,
-			}}
+			})}
 		>
 			<Header />
 			<Box>{children}</Box>

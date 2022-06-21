@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { createTheme } from '@mui/material/styles'
 
 declare module '@mui/material/styles' {
@@ -40,36 +39,37 @@ export default function MuiTheme(isDarkTheme: boolean) {
 				  }
 				: {
 						mode: 'light',
-						// primary: {
-						// 	main: '#009fd4',
-						// 	light: '#7ed3f7',
-						// 	dark: '#264180',
-						// 	contrastText: '#ffffff',
-						// },
-						// text: {
-						// 	primary: '#fff',
-						// 	disabled: '#7e7e7e',
-						// },
 				  }),
 		},
+		mixins: {
+			toolbar: {}, // This will get rid of minHeight styles
+		},
 		typography: {
-			fontFamily: 'Open Sans, Titillium Web, Helvetica, Arial, sans-serif',
+			fontFamily: [
+				'Open Sans',
+				'Roboto',
+				'Arial',
+				'sans-serif',
+			].join(','),
 			h1: {
-				fontSize: 48,
+				fontSize: '3rem', // 48px
 				fontWeight: 400,
 			},
 			h2: {
-				fontSize: 36,
+				fontSize: '2.25rem', //36px
 				fontWeight: 400,
 			},
 			h3: {
-				fontSize: 24,
+				fontSize: '1.5rem', // 24px
+				fontWeight: 400,
 			},
 			h4: {
-				fontSize: 20,
+				fontSize: '1.25rem', // 20px
+				fontWeight: 400,
 			},
 			h5: {
-				fontSize: 16,
+				fontSize: '1rem', // 16px
+				fontWeight: 400,
 			},
 			button: {
 				fontSize: '1rem',
@@ -79,91 +79,33 @@ export default function MuiTheme(isDarkTheme: boolean) {
 		},
 	})
 
-	return useMemo(
-		() =>
-			createTheme(theme, {
-				components: {
-					MuiButton: {
-						defaultProps: {
-							variant: 'contained',
-						},
-					},
-					MuiAppBar: {
-						defaultProps: {
-							position: 'static',
-						},
-						styleOverrides: {
-							root: {
-								'& .MuiToolbar-root': {
-									padding: 16,
-									'& .navButtons': {
-										[theme.breakpoints.down('sm')]: {
-											display: 'none',
-										},
-										'& .MuiButton-root': {
-											color: 'inherit',
-											backgroundColor: 'transparent',
-										},
-									},
-									'& .menuIcon': {
-										color: 'inherit',
-										[theme.breakpoints.up('sm')]: {
-											display: 'none',
-										},
-									},
-								},
-							},
-						},
-					},
-					MuiToolbar: {
-						defaultProps: {
-							disableGutters: true,
-						},
-						styleOverrides: {
-							root: {
-								minHeight: 'unset !important',
-							},
-						},
-					},
-					MuiDialog: {
-						defaultProps: {
-							fullWidth: true,
-							maxWidth: 'sm',
-						},
-					},
-					MuiDialogTitle: {
-						styleOverrides: {
-							root: {
-								display: 'flex',
-								justifyContent: 'space-between',
-								alignItems: 'center',
-								backgroundColor: theme.palette.primary.main,
-								color: theme.palette.primary.contrastText,
-								fontWeight: 'bold',
-								padding: '8px 8px 8px 16px',
-								cursor: 'grab',
-								'& .MuiIconButton-root': {
-									color: 'inherit'
-								}
-							},
-						},
-					},
-					MuiDialogContent: {
-						styleOverrides: {
-							root: {
-								padding: '16px !important',
-							},
-						},
-					},
-					MuiDialogActions: {
-						styleOverrides: {
-							root: {
-								padding: '16px',
-							},
-						},
-					},
+	return createTheme(theme, {
+		components: {
+			MuiButton: {
+				defaultProps: {
+					variant: 'contained',
 				},
-			}),
-		[isDarkTheme]
-	)
+				// styleOverrides: {
+				// 	root: {
+				// 		padding: '4px 14px',
+				// 	},
+				// },
+			},
+			MuiLink: {
+				defaultProps: {
+					underline: 'none',
+				},
+			},
+			MuiAppBar: {
+				defaultProps: {
+					position: 'static',
+				},
+			},
+			MuiToolbar: {
+				defaultProps: {
+					disableGutters: true,
+				},
+			},
+		},
+	})
 }
