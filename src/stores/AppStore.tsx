@@ -20,7 +20,7 @@ export default class AppStore {
 		return this._isLoading
 	}
 
-	toggleLoading = () => {
-		this._isLoading = !this._isLoading
+	set isLoading(value: boolean) {
+		this._isLoading = value
 	}
 }

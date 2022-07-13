@@ -1,8 +1,11 @@
-import { Box } from '@mui/material'
+import { observer } from 'mobx-react-lite'
+import { Backdrop, Box, CircularProgress } from '@mui/material'
+import { useStoreContext } from 'StoreContext'
 import Header from 'components/Header'
 import { ReactChildren } from 'interfaces/react'
 
-export default function RootWrapper({ children }: ReactChildren) {
+const RootWrapper = ({ children }: ReactChildren) => {
+	const { appStore } = useStoreContext()
 
 	return (
 		<Box
@@ -16,6 +19,12 @@ export default function RootWrapper({ children }: ReactChildren) {
 		>
 			<Header />
 			<Box>{children}</Box>
+
+			<Backdrop open={appStore.isLoading}>
+				<CircularProgress />
+			</Backdrop>
 		</Box>
 	)
 }
+
+export default observer(RootWrapper)

@@ -11,7 +11,7 @@ function Home() {
 		<Box sx={{ padding: 2 }}>
 			<Typography variant='h2'>Home</Typography>
 			<DarkThemeButton />
-			<Button>Button</Button>
+			<Button onClick={() => appStore.isLoading = true}>Button</Button>
 		</Box>
 	)
 }
