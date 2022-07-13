@@ -8,8 +8,8 @@ import {
 	Box,
 } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
-import MenuButton from './MenuButton'
-import DarkThemeButton from './DarkThemeButton'
+import MenuIconButton from './MenuIconButton'
+import DarkThemeIconButton from './DarkThemeIconButton'
 
 function Header() {
 	const pages = ['Home', 'About']
@@ -43,7 +43,7 @@ function Header() {
 						))}
 					</Box>
 				</Box>
-				<MenuButton
+				<MenuIconButton
 					sx={{
 						color: 'inherit',
 						display: {
@@ -57,8 +57,8 @@ function Header() {
 							{page}
 						</MenuItem>
 					))}
-				</MenuButton>
-				<DarkThemeButton />
+				</MenuIconButton>
+				<DarkThemeIconButton />
 			</Toolbar>
 		</AppBar>
 	)

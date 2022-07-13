@@ -5,7 +5,7 @@ interface Props extends IconButtonProps {
 	icon: JSX.Element
 }
 
-export default function MenuButton({ icon, children, ...baseProps }: Props) {
+function MenuIconButton({ icon, children, ...baseProps }: Props) {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (
@@ -30,3 +30,5 @@ export default function MenuButton({ icon, children, ...baseProps }: Props) {
 		</>
 	)
 }
+
+export default MenuIconButton

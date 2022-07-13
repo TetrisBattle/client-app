@@ -2,7 +2,7 @@ import { Brightness4Outlined as Brightness4OutlinedIcon } from '@mui/icons-mater
 import { IconButton } from '@mui/material'
 import { useStoreContext } from 'StoreContext'
 
-function DarkThemeButton() {
+function DarkThemeIconButton() {
 	const { appStore } = useStoreContext()
 
 	return (
@@ -12,4 +12,4 @@ function DarkThemeButton() {
 	)
 }
 
-export default DarkThemeButton
+export default DarkThemeIconButton
