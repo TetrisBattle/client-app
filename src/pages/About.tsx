@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-function About() {
+const About = () => {
 	return (
 		<Box sx={{ padding: 2 }}>
 			<Typography variant='h2'>About</Typography>

@@ -5,7 +5,7 @@ interface Props extends IconButtonProps {
 	icon: JSX.Element
 }
 
-function MenuIconButton({ icon, children, ...baseProps }: Props) {
+const MenuIconButton = ({ icon, children, ...baseProps }: Props) => {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (

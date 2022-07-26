@@ -10,7 +10,7 @@ import {
 import { Close as CloseIcon } from '@mui/icons-material'
 import Draggable from 'react-draggable'
 
-function PaperComponent(props: PaperProps) {
+const PaperComponent = (paperProps: PaperProps) => {
 	const nodeRef = useRef(null)
 
 	return (
@@ -20,7 +20,7 @@ function PaperComponent(props: PaperProps) {
 			cancel={'[class*="MuiDialogContent-root"]'}
 			bounds='parent'
 		>
-			<Paper ref={nodeRef} {...props} sx={{ margin: '0 !important' }} />
+			<Paper ref={nodeRef} {...paperProps} sx={{ margin: '0 !important' }} />
 		</Draggable>
 	)
 }
@@ -32,7 +32,7 @@ interface Props extends DialogProps {
 		| undefined
 }
 
-function DraggableDialog(props: Props) {
+const DraggableDialog = (props: Props) => {
 	const { title, children, ...baseProps } = props
 
 	return (

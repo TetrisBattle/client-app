@@ -15,7 +15,7 @@ declare module '@mui/material/styles' {
 	}
 }
 
-export default function MuiTheme(isDarkTheme: boolean) {
+const MuiTheme = (isDarkTheme: boolean) => {
 	const theme = createTheme({
 		breakpoints: {
 			values: {
@@ -109,3 +109,5 @@ export default function MuiTheme(isDarkTheme: boolean) {
 		},
 	})
 }
+
+export default MuiTheme

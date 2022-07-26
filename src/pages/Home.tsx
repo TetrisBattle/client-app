@@ -3,7 +3,7 @@ import { Box, Button, Typography } from '@mui/material'
 import { useStoreContext } from 'StoreContext'
 import DarkThemeIconButton from 'components/DarkThemeIconButton'
 
-function Home() {
+const Home = () => {
 	const { appStore } = useStoreContext()
 
 	return (

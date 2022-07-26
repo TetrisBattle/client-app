@@ -11,7 +11,7 @@ import { Menu as MenuIcon } from '@mui/icons-material'
 import MenuIconButton from './MenuIconButton'
 import DarkThemeIconButton from './DarkThemeIconButton'
 
-function Header() {
+const Header = () => {
 	const pages = ['Home', 'About']
 
 	return (
@@ -58,7 +58,7 @@ function Header() {
 						</MenuItem>
 					))}
 				</MenuIconButton>
-				<DarkThemeIconButton />
+				<DarkThemeIconButton sx={{ color: 'inherit' }} />
 			</Toolbar>
 		</AppBar>
 	)
