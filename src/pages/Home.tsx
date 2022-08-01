@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { Box, Button, Typography } from '@mui/material'
-import { useStoreContext } from 'StoreContext'
+import { useStoreContext } from 'stores/StoreContext'
 import DarkThemeIconButton from 'components/DarkThemeIconButton'
 
 const Home = () => {

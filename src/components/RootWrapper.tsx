@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { Backdrop, Box, CircularProgress } from '@mui/material'
-import { useStoreContext } from 'StoreContext'
+import { useStoreContext } from 'stores/StoreContext'
 import Header from 'components/Header'
 import { ReactChildren } from 'interfaces/react'
 

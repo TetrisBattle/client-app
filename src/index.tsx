@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { StoreContextProvider } from 'StoreContext'
+import { StoreContextProvider } from 'stores/StoreContext'
 import MuiThemeProvider from 'material-ui/MuiThemeProvider'
 import App from './App'
 
