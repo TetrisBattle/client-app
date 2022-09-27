@@ -10,7 +10,7 @@ const Home = () => {
 		<Box sx={{ padding: 2 }}>
 			<Typography variant='h2'>Home</Typography>
 			<DarkThemeIconButton />
-			<Button onClick={() => { appStore.isLoading = true }}>Button</Button>
+			<Button color='white' onClick={() => { appStore.isLoading = true }}>Button</Button>
 		</Box>
 	)
 }

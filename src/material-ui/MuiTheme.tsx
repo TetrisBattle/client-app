@@ -1,32 +1,11 @@
 import { createTheme } from '@mui/material/styles'
-
-declare module '@mui/material/styles' {
-	interface BreakpointOverrides {
-		xs: true // 0
-		sm: true // 600
-		md: true // 900
-		lg: true // 1200
-		xl: true // 1536
-
-		// mobile: true; // 0
-		// tablet: true; // 640
-		// laptop: true; // 1024
-		// desktop: true; // 1200
-	}
-}
+import { breakpoints, palette } from './overrides'
 
 const MuiTheme = (isDarkTheme: boolean) => {
 	const theme = createTheme({
-		breakpoints: {
-			values: {
-				xs: 0,
-				sm: 680,
-				md: 900,
-				lg: 1200,
-				xl: 1536,
-			},
-		},
+		breakpoints: breakpoints,
 		palette: {
+			...palette,
 			...(isDarkTheme
 				? {
 						mode: 'dark',
@@ -45,12 +24,7 @@ const MuiTheme = (isDarkTheme: boolean) => {
 			toolbar: {}, // This will get rid of minHeight styles
 		},
 		typography: {
-			fontFamily: [
-				'Open Sans',
-				'Roboto',
-				'Arial',
-				'sans-serif',
-			].join(','),
+			fontFamily: ['Open Sans', 'Roboto', 'Arial', 'sans-serif'].join(','),
 			h1: {
 				fontSize: '3rem', // 48px
 				fontWeight: 400,
@@ -77,9 +51,6 @@ const MuiTheme = (isDarkTheme: boolean) => {
 				textTransform: 'none',
 			},
 		},
-	})
-
-	return createTheme(theme, {
 		components: {
 			MuiButton: {
 				defaultProps: {
@@ -107,6 +78,10 @@ const MuiTheme = (isDarkTheme: boolean) => {
 				},
 			},
 		},
+	})
+
+	return createTheme(theme, {
+		components: {},
 	})
 }
 

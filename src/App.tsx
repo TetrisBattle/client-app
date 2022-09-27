@@ -4,20 +4,27 @@ import {
 	Route,
 	Navigate,
 } from 'react-router-dom'
-import RootWrapper from 'components/RootWrapper'
+import { Backdrop, CircularProgress } from '@mui/material'
+import { useStoreContext } from 'stores/StoreContext'
+import Header from 'components/Header'
 import Home from 'pages/Home'
 import About from 'pages/About'
 
 export default function App() {
+	const { appStore } = useStoreContext()
+
 	return (
 		<Router>
-			<RootWrapper>
-				<Routes>
-					<Route path='/' element={<Navigate replace to='/Home' />} />
-					<Route path='/Home' element={<Home />} />
-					<Route path='/About' element={<About />} />
-				</Routes>
-			</RootWrapper>
+			<Header />
+			<Routes>
+				<Route path='/' element={<Navigate replace to='/Home' />} />
+				<Route path='/Home' element={<Home />} />
+				<Route path='/About' element={<About />} />
+			</Routes>
+
+			<Backdrop open={appStore.isLoading}>
+				<CircularProgress />
+			</Backdrop>
 		</Router>
 	)
 }
