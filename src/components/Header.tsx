@@ -10,9 +10,10 @@ import {
 import { Menu as MenuIcon } from '@mui/icons-material'
 import MenuIconButton from './MenuIconButton'
 import DarkThemeIconButton from './DarkThemeIconButton'
+import { useStoreContext } from 'contexts/StoreContext'
 
 const Header = () => {
-	const pages = ['Home', 'About']
+	const { appStore } = useStoreContext()
 
 	return (
 		<AppBar>
@@ -29,16 +30,17 @@ const Header = () => {
 					}}
 				>
 					<Box sx={{ pr: 1 }}>
-						{pages.map((page) => (
+						{appStore.pages.map((page) => (
 							<Button
-								key={page}
+								key={page.path}
+								onClick={() => appStore.selectedPage = page}
 								component={Link}
-								to={`/${page}`}
+								to={page.path}
 								variant='text'
 								color='inherit'
 								sx={{ '&:hover': { bgcolor: 'transparent' }, fontSize: '1.25rem' }}
 							>
-								{page}
+								{page.id}
 							</Button>
 						))}
 					</Box>
@@ -52,9 +54,9 @@ const Header = () => {
 					}}
 					icon={<MenuIcon />}
 				>
-					{pages.map((page) => (
-						<MenuItem key={page} component={Link} to={`/${page}`}>
-							{page}
+					{appStore.pages.map((page) => (
+						<MenuItem key={page.path} onClick={() => appStore.selectedPage = page} component={Link} to={page.path}>
+							{page.id}
 						</MenuItem>
 					))}
 				</MenuIconButton>
