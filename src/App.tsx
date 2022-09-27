@@ -5,7 +5,7 @@ import {
 	Navigate,
 } from 'react-router-dom'
 import { Backdrop, CircularProgress } from '@mui/material'
-import { useStoreContext } from 'stores/StoreContext'
+import { useStoreContext } from 'contexts/StoreContext'
 import Header from 'components/Header'
 import Home from 'pages/Home'
 import About from 'pages/About'
