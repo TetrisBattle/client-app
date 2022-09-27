@@ -8,7 +8,7 @@ const Home = () => {
 
 	return (
 		<Box sx={{ padding: 2 }}>
-			<Typography variant='h2'>Home</Typography>
+			<Typography variant='h1'>Home</Typography>
 			<DarkThemeIconButton />
 			<Button
 				color='white'

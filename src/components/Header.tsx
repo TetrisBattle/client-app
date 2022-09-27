@@ -19,7 +19,7 @@ const Header = () => {
 		<AppBar>
 			<Toolbar sx={{ p: 1 }}>
 				<Typography variant='h1' sx={{ pl: 1, flexGrow: 1 }}>
-					Title
+					Site
 				</Typography>
 				<Box
 					sx={{
