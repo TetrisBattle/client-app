@@ -1,8 +1,8 @@
 import { createTheme } from '@mui/material/styles'
 import { breakpoints, palette } from './overrides'
 
-const MuiTheme = (isDarkTheme: boolean) => {
-	const theme = createTheme({
+const defaultTheme = (isDarkTheme: boolean) => {
+	return createTheme({
 		breakpoints: breakpoints,
 		palette: {
 			...palette,
@@ -47,7 +47,7 @@ const MuiTheme = (isDarkTheme: boolean) => {
 			},
 			button: {
 				fontSize: '1rem',
-				fontWeight: 'bold',
+				fontWeight: 600,
 				textTransform: 'none',
 			},
 		},
@@ -56,11 +56,6 @@ const MuiTheme = (isDarkTheme: boolean) => {
 				defaultProps: {
 					variant: 'contained',
 				},
-				// styleOverrides: {
-				// 	root: {
-				// 		padding: '4px 14px',
-				// 	},
-				// },
 			},
 			MuiLink: {
 				defaultProps: {
@@ -79,10 +74,6 @@ const MuiTheme = (isDarkTheme: boolean) => {
 			},
 		},
 	})
-
-	return createTheme(theme, {
-		components: {},
-	})
 }
 
-export default MuiTheme
+export default defaultTheme
