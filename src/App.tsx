@@ -8,21 +8,28 @@ import { Backdrop, CircularProgress } from '@mui/material'
 import { useStoreContext } from 'contexts/StoreContext'
 import Header from 'components/Header'
 
+const AppRoutes = () => {
+	const { appStore } = useStoreContext()
+
+	return (
+		<Routes>
+			<Route
+				path='/'element={<Navigate replace to='/home' />}
+			/>
+			{appStore.routes.map((route) => (
+				<Route key={route.path} path={route.path} element={route.element} />
+			))}
+		</Routes>
+	)
+}
+
 export default function App() {
 	const { appStore } = useStoreContext()
 
 	return (
 		<Router>
 			<Header />
-			<Routes>
-				<Route
-					path='/'
-					element={<Navigate replace to={appStore.pages[0].path} />}
-				/>
-				{appStore.pages.map((page) => (
-					<Route key={page.path} path={page.path} element={page.element} />
-				))}
-			</Routes>
+			<AppRoutes />
 
 			<Backdrop open={appStore.isLoading}>
 				<CircularProgress />

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {
 	AppBar,
 	Toolbar,
@@ -25,22 +25,28 @@ const Header = () => {
 					sx={{
 						display: {
 							xs: 'none',
-							sm: 'unset',
+							sm: 'block',
 						},
 					}}
 				>
 					<Box sx={{ pr: 1 }}>
-						{appStore.pages.map((page) => (
+						{appStore.routes.map((route) => (
 							<Button
-								key={page.path}
-								onClick={() => appStore.selectedPage = page}
-								component={Link}
-								to={page.path}
+								key={route.path}
+								component={NavLink}
+								to={route.path}
 								variant='text'
-								color='inherit'
-								sx={{ '&:hover': { bgcolor: 'transparent' }, fontSize: '1.25rem' }}
+								sx={(theme) => ({
+									'&:hover': { bgcolor: 'transparent' },
+									fontSize: '1.25rem',
+									fontWeight: (theme) => theme.typography.fontWeightRegular,
+									color: 'inherit',
+									'&.active': theme.palette.mode === 'dark' && {
+										color: theme.palette.primary.main,
+									},
+								})}
 							>
-								{page.id}
+								{route.label}
 							</Button>
 						))}
 					</Box>
@@ -54,9 +60,18 @@ const Header = () => {
 					}}
 					icon={<MenuIcon />}
 				>
-					{appStore.pages.map((page) => (
-						<MenuItem key={page.path} onClick={() => appStore.selectedPage = page} component={Link} to={page.path}>
-							{page.id}
+					{appStore.routes.map((route) => (
+						<MenuItem
+							key={route.path}
+							component={NavLink}
+							to={route.path}
+							sx={{
+								'&.active': (theme) => ({
+									color: theme.palette.primary.main,
+								}),
+							}}
+						>
+							{route.label}
 						</MenuItem>
 					))}
 				</MenuIconButton>
