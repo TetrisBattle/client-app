@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
-import Home from 'pages/Home'
-import About from 'pages/About'
+import Home from 'routes/Home'
+import About from 'routes/About'
 
 export default class AppStore {
 	private _isDarkTheme = true
