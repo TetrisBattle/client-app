@@ -13,9 +13,8 @@ const AppRoutes = () => {
 
 	return (
 		<Routes>
-			<Route
-				path='/'element={<Navigate replace to='/home' />}
-			/>
+			<Route path='*' element={<Navigate replace to='/' />} />
+			<Route path='/' element={<Navigate replace to='/home' />} />
 			{appStore.routes.map((route) => (
 				<Route key={route.path} path={route.path} element={route.element} />
 			))}
