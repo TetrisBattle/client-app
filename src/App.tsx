@@ -6,18 +6,17 @@ import {
 } from 'react-router-dom'
 import { Backdrop, CircularProgress } from '@mui/material'
 import { useStoreContext } from 'contexts/StoreContext'
-import Header from 'components/Header'
+import Header from 'components/header/Header'
+import About from 'routes/About'
+import Home from 'routes/Home'
 
-const AppRoutes = () => {
-	const { appStore } = useStoreContext()
-
+function AppRoutes() {
 	return (
 		<Routes>
 			<Route path='*' element={<Navigate replace to='/' />} />
 			<Route path='/' element={<Navigate replace to='/home' />} />
-			{appStore.routes.map((route) => (
-				<Route key={route.path} path={route.path} element={route.element} />
-			))}
+			<Route path='/home' element={<Home />} />
+			<Route path='/about' element={<About />} />
 		</Routes>
 	)
 }

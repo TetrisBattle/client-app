@@ -4,7 +4,11 @@ import { CssBaseline } from '@mui/material'
 import { useStoreContext } from 'contexts/StoreContext'
 import muiTheme from './muiTheme'
 
-const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
+type Props = {
+	children: React.ReactNode
+}
+
+function MuiThemeProvider({ children }: Props) {
 	const { appStore } = useStoreContext()
 	const theme = muiTheme(appStore.isDarkTheme)
 

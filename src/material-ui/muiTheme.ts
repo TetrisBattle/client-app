@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles'
 import { breakpoints, palette } from './overrides'
 
-const muiTheme = (isDarkTheme: boolean) => {
+export default function muiTheme(isDarkTheme: boolean) {
 	const theme = createTheme({
 		breakpoints: breakpoints,
 		palette: {
@@ -96,5 +96,3 @@ const muiTheme = (isDarkTheme: boolean) => {
 		},
 	})
 }
-
-export default muiTheme
