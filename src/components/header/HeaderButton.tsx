@@ -2,11 +2,11 @@ import { Button } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import { Route } from 'types'
 
-type Props = {
+type HeaderButtonProps = {
 	route: Route
 }
 
-export default function HeaderButton({ route }: Props) {
+export default function HeaderButton({ route }: HeaderButtonProps) {
 	return (
 		<Button
 			component={NavLink}

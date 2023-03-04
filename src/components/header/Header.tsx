@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography, Box } from '@mui/material'
-import HeaderMenuButtom from './HeaderMenuButton'
+import HeaderMenu from './HeaderMenu'
 import DarkThemeIconButton from '../DarkThemeIconButton'
 import HeaderButton from './HeaderButton'
 import { ReactComponent as Logo } from 'assets/Logo.svg'
@@ -24,7 +24,7 @@ export default function Header() {
 					<HeaderButton route='home' />
 					<HeaderButton route='about' />
 				</Box>
-				<HeaderMenuButtom routes={['home', 'about']} />
+				<HeaderMenu routes={['home', 'about']} />
 				<DarkThemeIconButton sx={{ color: 'inherit' }} />
 			</Toolbar>
 		</AppBar>

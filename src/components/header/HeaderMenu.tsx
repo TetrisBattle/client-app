@@ -4,11 +4,11 @@ import { Menu as MenuIcon } from '@mui/icons-material'
 import { Route } from 'types'
 import { NavLink } from 'react-router-dom'
 
-type Props = {
+type HeaderMenuProps = {
 	routes: Route[]
 }
 
-export default function HeaderMenuButtom({ routes }: Props) {
+export default function HeaderMenu({ routes }: HeaderMenuProps) {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (
