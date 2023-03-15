@@ -1,17 +1,16 @@
 import { Button } from '@mui/material'
+import { RouteOption, routeToTitle } from 'AppRoutes'
 import { NavLink } from 'react-router-dom'
-import { Route } from 'types'
-import firstLetterToUpperCase from 'utils/firstLetterToUpperCase'
 
 type HeaderButtonProps = {
-	route: Route
+	route: RouteOption
 }
 
 export default function HeaderButton({ route }: HeaderButtonProps) {
 	return (
 		<Button
 			component={NavLink}
-			to={'/' + route}
+			to={route}
 			variant='text'
 			sx={(theme) => ({
 				'&:hover': { bgcolor: 'transparent' },
@@ -23,7 +22,7 @@ export default function HeaderButton({ route }: HeaderButtonProps) {
 				},
 			})}
 		>
-			{firstLetterToUpperCase(route)}
+			{routeToTitle(route)}
 		</Button>
 	)
 }

@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { IconButton, Menu, MenuItem } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
-import { Route } from 'types'
 import { NavLink } from 'react-router-dom'
-import firstLetterToUpperCase from 'utils/firstLetterToUpperCase'
+import { RouteOption, routeToTitle } from 'AppRoutes'
 
 type HeaderMenuProps = {
-	routes: Route[]
+	routes: RouteOption[]
 }
 
 export default function HeaderMenu({ routes }: HeaderMenuProps) {
@@ -36,14 +35,14 @@ export default function HeaderMenu({ routes }: HeaderMenuProps) {
 					<MenuItem
 						key={'headerMenuItem-' + route}
 						component={NavLink}
-						to={'/' + route}
+						to={route}
 						sx={{
 							'&.active': (theme) => ({
 								color: theme.palette.primary.main,
 							}),
 						}}
 					>
-						{firstLetterToUpperCase(route)}
+						{routeToTitle(route)}
 					</MenuItem>
 				))}
 			</Menu>
