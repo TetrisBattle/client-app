@@ -9,7 +9,10 @@ export default function Header() {
 		<AppBar>
 			<Toolbar sx={{ p: 1 }}>
 				<Logo width={48} height={48} />
-				<Typography variant='h1' sx={{ pl: 1, flexGrow: 1, fontSize: 32 }}>
+				<Typography
+					variant='h1'
+					sx={{ pl: 1, flexGrow: 1, fontSize: 32 }}
+				>
 					Site
 				</Typography>
 				<Box

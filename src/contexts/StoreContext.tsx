@@ -10,7 +10,9 @@ const StoreContext = createContext(rootStore)
 
 export function StoreContextProvider({ children }: Props) {
 	return (
-		<StoreContext.Provider value={rootStore}>{children}</StoreContext.Provider>
+		<StoreContext.Provider value={rootStore}>
+			{children}
+		</StoreContext.Provider>
 	)
 }
 

@@ -1,4 +1,4 @@
-import { grey } from "@mui/material/colors"
+import { grey } from '@mui/material/colors'
 
 declare module '@mui/material/styles' {
 	interface BreakpointOverrides {
@@ -15,17 +15,17 @@ declare module '@mui/material/styles' {
 	}
 
 	interface Palette {
-    white: Palette['primary'];
-  }
+		white: Palette['primary']
+	}
 
-  interface PaletteOptions {
-    white: PaletteOptions['primary'];
-  }
+	interface PaletteOptions {
+		white: PaletteOptions['primary']
+	}
 }
 
 declare module '@mui/material/Button' {
 	interface ButtonPropsColorOverrides {
-		white: true;
+		white: true
 	}
 }
 
@@ -45,5 +45,5 @@ export const palette = {
 		light: grey[50],
 		dark: grey[200],
 		contrastText: 'rgba(0, 0, 0, 0.87)',
-	}
+	},
 }

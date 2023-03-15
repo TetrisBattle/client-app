@@ -24,7 +24,9 @@ export default function muiTheme(isDarkTheme: boolean) {
 			toolbar: {}, // This will get rid of minHeight styles
 		},
 		typography: {
-			fontFamily: ['Open Sans', 'Roboto', 'Arial', 'sans-serif'].join(','),
+			fontFamily: ['Open Sans', 'Roboto', 'Arial', 'sans-serif'].join(
+				','
+			),
 			fontWeightLight: 300,
 			fontWeightRegular: 400,
 			fontWeightMedium: 500,
