@@ -1,6 +1,7 @@
 import { Button } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import { Route } from 'types'
+import firstLetterToUpperCase from 'utils/firstLetterToUpperCase'
 
 type HeaderButtonProps = {
 	route: Route
@@ -22,7 +23,7 @@ export default function HeaderButton({ route }: HeaderButtonProps) {
 				},
 			})}
 		>
-			{route.charAt(0).toUpperCase() + route.slice(1)}
+			{firstLetterToUpperCase(route)}
 		</Button>
 	)
 }

@@ -3,6 +3,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { Route } from 'types'
 import { NavLink } from 'react-router-dom'
+import firstLetterToUpperCase from 'utils/firstLetterToUpperCase'
 
 type HeaderMenuProps = {
 	routes: Route[]
@@ -42,7 +43,7 @@ export default function HeaderMenu({ routes }: HeaderMenuProps) {
 							}),
 						}}
 					>
-						{route.charAt(0).toUpperCase() + route.slice(1)}
+						{firstLetterToUpperCase(route)}
 					</MenuItem>
 				))}
 			</Menu>
