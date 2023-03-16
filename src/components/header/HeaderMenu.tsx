@@ -4,7 +4,7 @@ import { Menu as MenuIcon } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
 import { RouteOption, routeToTitle } from 'AppRoutes'
 
-type HeaderMenuProps = {
+interface HeaderMenuProps {
 	routes: RouteOption[]
 }
 
