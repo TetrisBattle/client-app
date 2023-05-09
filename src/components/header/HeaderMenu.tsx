@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { IconButton, Menu, MenuItem } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
-import { RouteOption, routeToTitle } from 'AppRoutes'
+import { RouteOption } from 'enums/RouteOption'
+import { routeToTitle } from 'utils/routeToTitle'
 
 interface HeaderMenuProps {
 	routes: RouteOption[]
 }
 
-export default function HeaderMenu({ routes }: HeaderMenuProps) {
+export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (

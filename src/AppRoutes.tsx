@@ -1,17 +1,9 @@
+import { RouteOption } from 'enums/RouteOption'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import About from 'routes/About'
-import Home from 'routes/Home'
+import { About } from 'routes/About'
+import { Home } from 'routes/Home'
 
-export enum RouteOption {
-	Home = '/home',
-	About = '/about',
-}
-
-export function routeToTitle(route: RouteOption): string {
-	return route[1].toUpperCase() + route.slice(2)
-}
-
-export default function AppRoutes() {
+export function AppRoutes() {
 	return (
 		<Routes>
 			<Route path='*' element={<Navigate replace to='/' />} />

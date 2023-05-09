@@ -1,5 +1,5 @@
-import AppStore from './AppStore'
+import { AppStore } from './AppStore'
 
-export default class RootStore {
+export class RootStore {
 	appStore = new AppStore()
 }

@@ -1,20 +1,24 @@
 import { AppBar, Toolbar, Typography, Box } from '@mui/material'
-import HeaderMenu from './HeaderMenu'
-import DarkThemeIconButton from '../DarkThemeIconButton'
-import HeaderButton from './HeaderButton'
-import { ReactComponent as Logo } from 'assets/Logo.svg'
-import { RouteOption } from 'AppRoutes'
+import { HeaderMenu } from './HeaderMenu'
+import { DarkThemeIconButton } from '../DarkThemeIconButton'
+import { HeaderButton } from './HeaderButton'
+import { Logo } from 'assets/Logo.tsx'
+import { RouteOption } from 'enums/RouteOption'
 
-export default function Header() {
+export const Header = () => {
 	return (
 		<AppBar>
 			<Toolbar sx={{ p: 1 }}>
 				<Logo width={48} height={48} />
 				<Typography
 					variant='h1'
-					sx={{ pl: 1, flexGrow: 1, fontSize: 32 }}
+					sx={{
+						pl: 1,
+						flexGrow: 1,
+						fontSize: 32,
+					}}
 				>
-					Site
+					ClientApp
 				</Typography>
 				<Box
 					sx={{

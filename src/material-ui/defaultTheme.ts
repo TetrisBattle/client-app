@@ -1,11 +1,8 @@
 import { createTheme } from '@mui/material/styles'
-import { breakpoints, palette } from './overrides'
 
-export default function muiTheme(isDarkTheme: boolean) {
+export const defaultTheme = (isDarkTheme: boolean) => {
 	const theme = createTheme({
-		breakpoints: breakpoints,
 		palette: {
-			...palette,
 			...(isDarkTheme
 				? {
 						mode: 'dark',
@@ -23,15 +20,6 @@ export default function muiTheme(isDarkTheme: boolean) {
 		mixins: {
 			toolbar: {}, // This will get rid of minHeight styles
 		},
-		typography: {
-			fontFamily: ['Open Sans', 'Roboto', 'Arial', 'sans-serif'].join(
-				','
-			),
-			fontWeightLight: 300,
-			fontWeightRegular: 400,
-			fontWeightMedium: 500,
-			fontWeightBold: 700,
-		},
 		components: {
 			MuiButton: {
 				defaultProps: {
@@ -41,11 +29,6 @@ export default function muiTheme(isDarkTheme: boolean) {
 			MuiTextField: {
 				defaultProps: {
 					autoComplete: 'off',
-				},
-			},
-			MuiLink: {
-				defaultProps: {
-					underline: 'none',
 				},
 			},
 			MuiAppBar: {

@@ -1,12 +1,13 @@
 import { Button } from '@mui/material'
-import { RouteOption, routeToTitle } from 'AppRoutes'
+import { RouteOption } from 'enums/RouteOption'
 import { NavLink } from 'react-router-dom'
+import { routeToTitle } from 'utils/routeToTitle'
 
 interface HeaderButtonProps {
 	route: RouteOption
 }
 
-export default function HeaderButton({ route }: HeaderButtonProps) {
+export const HeaderButton = ({ route }: HeaderButtonProps) => {
 	return (
 		<Button
 			component={NavLink}
