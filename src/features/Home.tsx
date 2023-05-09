@@ -8,9 +8,7 @@ export const Home = observer(() => {
 	return (
 		<Box id='Home' sx={{ p: { xs: 2, sm: 3 } }}>
 			<Typography variant='h1'>Home</Typography>
-			<Button onClick={() => appStore.toggleDarkTheme()}>
-				Toggle theme
-			</Button>
+			<Button onClick={() => appStore.toggleDarkTheme()}>Theme</Button>
 		</Box>
 	)
 })

@@ -48,23 +48,18 @@ export const defaultTheme = (isDarkTheme: boolean) => {
 		typography: {
 			h1: {
 				fontSize: '3rem', // 48px
-				fontWeight: theme.typography.fontWeightRegular,
 			},
 			h2: {
 				fontSize: '2rem', //32px
-				fontWeight: theme.typography.fontWeightRegular,
 			},
 			h3: {
 				fontSize: '1.5rem', // 24px
-				fontWeight: theme.typography.fontWeightRegular,
 			},
 			h4: {
 				fontSize: '1.25rem', // 20px
-				fontWeight: theme.typography.fontWeightRegular,
 			},
 			h5: {
 				fontSize: '1rem', // 16px
-				fontWeight: theme.typography.fontWeightRegular,
 			},
 			button: {
 				fontSize: '1rem',

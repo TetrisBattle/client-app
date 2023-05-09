@@ -7,7 +7,7 @@ export class AppStore {
 		makeAutoObservable(this)
 	}
 
-	toggleDarkTheme() {
+	toggleDarkTheme = () => {
 		this.isDarkTheme = !this.isDarkTheme
 	}
 }

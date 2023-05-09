@@ -8,7 +8,7 @@ import { RouteOption } from 'enums/RouteOption'
 export const Header = () => {
 	return (
 		<AppBar>
-			<Toolbar sx={{ p: 1 }}>
+			<Toolbar sx={{ height: 64, px: 1 }}>
 				<Logo width={48} height={48} />
 				<Typography
 					variant='h1'
@@ -22,10 +22,11 @@ export const Header = () => {
 				</Typography>
 				<Box
 					sx={{
+						height: 1,
 						pr: 1,
 						display: {
 							xs: 'none',
-							sm: 'block',
+							sm: 'flex',
 						},
 					}}
 				>

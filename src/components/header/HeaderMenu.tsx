@@ -3,7 +3,7 @@ import { IconButton, Menu, MenuItem } from '@mui/material'
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
 import { RouteOption } from 'enums/RouteOption'
-import { routeToTitle } from 'utils/routeToTitle'
+import { routeToTitle } from 'app/Routes'
 
 interface HeaderMenuProps {
 	routes: RouteOption[]
