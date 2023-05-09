@@ -6,7 +6,7 @@ function Home() {
 	const { appStore } = useStoreContext()
 
 	return (
-		<Box sx={{ p: { xs: 2, sm: 3 } }}>
+		<Box id='Home' sx={{ p: { xs: 2, sm: 3 } }}>
 			<Typography variant='h1'>Home</Typography>
 			<Button onClick={() => appStore.setIsLoading(true)}>Button</Button>
 		</Box>
