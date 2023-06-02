@@ -3,7 +3,7 @@ import { HeaderMenu } from './HeaderMenu'
 import { DarkThemeIconButton } from '../DarkThemeIconButton'
 import { HeaderButton } from './HeaderButton'
 import { Logo } from 'assets/Logo.tsx'
-import { RouteOption } from 'enums/RouteOption'
+import { RouteOption } from 'app/Routes'
 
 export const Header = () => {
 	return (

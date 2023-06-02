@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { StoreContextProvider } from 'contexts/StoreContextProvider.tsx'
+import { StoreContextProvider } from 'contexts/StoreContextProvider'
 import { MuiThemeProvider } from 'material-ui/MuiThemeProvider'
 import { RouterProvider } from 'react-router-dom'
 import { router } from 'app/Routes'

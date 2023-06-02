@@ -8,7 +8,6 @@ export enum RouteOption {
 	NotFound = '/404',
 	Home = '/home',
 	About = '/about',
-	Phones = '/phones',
 }
 
 export const routes: RouteObject[] = [
@@ -21,6 +20,7 @@ export const routes: RouteObject[] = [
 				path: '*',
 				element: <Navigate replace to={RouteOption.NotFound} />,
 			},
+			{ path: '/', element: <Navigate replace to={RouteOption.Home} /> },
 			{ path: RouteOption.Home, element: <Home /> },
 			{ path: RouteOption.About, element: <About /> },
 		],

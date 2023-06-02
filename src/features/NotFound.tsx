@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-import { RouteOption } from 'enums/RouteOption'
+import { RouteOption } from 'app/Routes'
 import { Link } from 'react-router-dom'
 
 export const NotFound = () => {
