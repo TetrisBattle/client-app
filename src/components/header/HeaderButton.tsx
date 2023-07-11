@@ -1,7 +1,6 @@
 import { Button } from '@mui/material'
+import { RouteOption, routeToTitle } from 'app/Routes'
 import { NavLink } from 'react-router-dom'
-import { RouteOption } from 'app/Routes'
-import { routeToTitle } from 'app/Routes'
 
 interface HeaderButtonProps {
 	route: RouteOption

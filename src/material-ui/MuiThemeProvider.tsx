@@ -1,8 +1,8 @@
-import { observer } from 'mobx-react-lite'
-import { ThemeProvider } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
-import { muiTheme } from './muiTheme'
+import { ThemeProvider } from '@mui/material/styles'
 import { useStore } from 'contexts/useStore'
+import { observer } from 'mobx-react-lite'
+import { muiTheme } from './muiTheme'
 
 interface MuiThemeProviderProps {
 	children: React.ReactNode

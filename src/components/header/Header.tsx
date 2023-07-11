@@ -1,11 +1,16 @@
-import { AppBar, Toolbar, Typography, Box } from '@mui/material'
-import { HeaderMenu } from './HeaderMenu'
-import { DarkThemeIconButton } from '../DarkThemeIconButton'
-import { HeaderButton } from './HeaderButton'
-import { Logo } from 'assets/Logo.tsx'
+import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import { RouteOption } from 'app/Routes'
+import { Logo } from 'assets/Logo.tsx'
+import { DarkThemeIconButton } from '../DarkThemeIconButton'
+import { HeaderNav } from './HeaderNav'
 
 export const Header = () => {
+	const headerRoutes = [
+		RouteOption.Home,
+		RouteOption.About,
+		RouteOption.Forms,
+	]
+
 	return (
 		<AppBar>
 			<Toolbar sx={{ height: 64, px: 1 }}>
@@ -14,7 +19,6 @@ export const Header = () => {
 					variant='h1'
 					sx={{
 						pl: 1,
-						flexGrow: 1,
 						fontSize: 32,
 					}}
 				>
@@ -22,19 +26,14 @@ export const Header = () => {
 				</Typography>
 				<Box
 					sx={{
-						height: 1,
-						pr: 1,
-						display: {
-							xs: 'none',
-							sm: 'flex',
-						},
+						width: 1,
+						display: 'flex',
+						justifyContent: 'flex-end',
 					}}
 				>
-					<HeaderButton route={RouteOption.Home} />
-					<HeaderButton route={RouteOption.About} />
+					<HeaderNav routes={headerRoutes} />
+					<DarkThemeIconButton sx={{ color: 'inherit' }} />
 				</Box>
-				<HeaderMenu routes={[RouteOption.Home, RouteOption.About]} />
-				<DarkThemeIconButton sx={{ color: 'inherit' }} />
 			</Toolbar>
 		</AppBar>
 	)

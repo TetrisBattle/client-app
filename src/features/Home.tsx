@@ -1,6 +1,6 @@
-import { observer } from 'mobx-react-lite'
 import { Box, Button, Typography } from '@mui/material'
 import { useStore } from 'contexts/useStore'
+import { observer } from 'mobx-react-lite'
 
 export const Home = observer(() => {
 	const { appStore } = useStore()

@@ -29,6 +29,7 @@ export const defaultTheme = (isDarkTheme: boolean) => {
 			MuiTextField: {
 				defaultProps: {
 					autoComplete: 'off',
+					fullWidth: true,
 				},
 			},
 			MuiAppBar: {
