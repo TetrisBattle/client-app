@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 
 export const schema = Yup.object({
-	email: Yup.string().email('Invalid email').required('Email is required'),
+	email: Yup.string().required('Email is required').email('Invalid email'),
 	password: Yup.string()
 		.required('Password is required')
 		.matches(
