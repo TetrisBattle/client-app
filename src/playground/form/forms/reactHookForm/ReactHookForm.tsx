@@ -81,7 +81,7 @@ export const ReactHookForm = () => {
 					name='price'
 					label='Price'
 					required
-					isFloatInput
+					isDecimalInput
 					InputProps={{
 						endAdornment: (
 							<InputAdornment position='end'>EUR</InputAdornment>

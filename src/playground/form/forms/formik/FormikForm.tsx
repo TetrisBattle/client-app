@@ -66,7 +66,7 @@ export const FormikForm = observer(() => {
 						<FormikTextField
 							name='price'
 							label='Price'
-							isFloatInput
+							isDecimalInput
 							required
 							InputProps={{
 								endAdornment: (

@@ -1,6 +1,6 @@
 import { MenuItem, TextField, TextFieldProps } from '@mui/material'
 import { useField } from 'formik'
-import { isFloat } from 'utility/numberHandler'
+import { isDecimal } from 'utility/numberHandler'
 
 export interface SelectOption {
 	value: string
@@ -9,14 +9,14 @@ export interface SelectOption {
 
 type FormikTextFieldProps = Omit<TextFieldProps, 'select'> & {
 	name: string
-	isFloatInput?: boolean
+	isDecimalInput?: boolean
 	options?: SelectOption[]
 	addEmptyOption?: boolean
 }
 
 export const FormikTextField = ({
 	name,
-	isFloatInput,
+	isDecimalInput,
 	options,
 	addEmptyOption,
 	...otherProps
@@ -29,13 +29,13 @@ export const FormikTextField = ({
 		...otherProps,
 	}
 
-	if (isFloatInput) {
+	if (isDecimalInput) {
 		return (
 			<TextField
 				{...field}
 				{...textFieldProps}
 				onChange={(e) => {
-					if (isFloat(e.target.value)) {
+					if (isDecimal(e.target.value)) {
 						helpers.setValue(e.target.value)
 					}
 				}}

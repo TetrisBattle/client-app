@@ -6,7 +6,7 @@ import {
 	FieldValues,
 	Path,
 } from 'react-hook-form'
-import { isFloat } from 'utility/numberHandler'
+import { isDecimal } from 'utility/numberHandler'
 
 export interface SelectOption {
 	value: string
@@ -20,7 +20,7 @@ export type ReactHookFormTextFieldProps<TData extends FieldValues> = Omit<
 	control: Control<TData>
 	errors?: FieldErrors<TData>
 	name: Path<TData>
-	isFloatInput?: boolean
+	isDecimalInput?: boolean
 	options?: SelectOption[]
 	addEmptyOption?: boolean
 }
@@ -29,7 +29,7 @@ export const ReactHookFormTextField = <TData extends FieldValues>({
 	control,
 	errors,
 	name,
-	isFloatInput,
+	isDecimalInput,
 	options,
 	addEmptyOption,
 	...otherProps
@@ -42,7 +42,7 @@ export const ReactHookFormTextField = <TData extends FieldValues>({
 		  }
 		: otherProps
 
-	if (isFloatInput) {
+	if (isDecimalInput) {
 		return (
 			<Controller
 				control={control}
@@ -52,7 +52,7 @@ export const ReactHookFormTextField = <TData extends FieldValues>({
 						{...field}
 						{...textFieldProps}
 						onChange={(e) => {
-							if (isFloat(e.target.value)) {
+							if (isDecimal(e.target.value)) {
 								field.onChange(e)
 							}
 						}}

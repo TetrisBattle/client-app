@@ -10,7 +10,7 @@ export function isInt(value: string) {
 	return false
 }
 
-export function isFloat(value: string, decimals = 2) {
+export function isDecimal(value: string, decimals = 2) {
 	const currentDecimals = value.split('.')?.[1]
 	if (value === '') return true
 	else if (currentDecimals && currentDecimals.length > decimals) return false
