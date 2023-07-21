@@ -1,7 +1,7 @@
 import { Button, ButtonProps, CircularProgress } from '@mui/material'
 import { useRef } from 'react'
 
-interface LoadingButtonProps extends ButtonProps {
+type LoadingButtonProps = ButtonProps & {
 	loading: boolean
 }
 

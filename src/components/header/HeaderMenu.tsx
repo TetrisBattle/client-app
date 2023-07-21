@@ -4,7 +4,7 @@ import { RouteOption, routeToTitle } from 'app/Routes'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-interface HeaderMenuProps {
+type HeaderMenuProps = {
 	routes: RouteOption[]
 }
 

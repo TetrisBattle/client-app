@@ -1,4 +1,4 @@
-interface LogoProps {
+type LogoProps = {
 	width: number
 	height: number
 }

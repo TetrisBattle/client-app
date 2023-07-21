@@ -2,7 +2,7 @@ import { MenuItem, TextField, TextFieldProps } from '@mui/material'
 import { useField } from 'formik'
 import { isDecimal } from 'utility/numberHandler'
 
-export interface SelectOption {
+export type SelectOption = {
 	value: string
 	label: string
 }

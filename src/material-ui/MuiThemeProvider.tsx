@@ -4,7 +4,7 @@ import { useStore } from 'contexts/useStore'
 import { observer } from 'mobx-react-lite'
 import { muiTheme } from './muiTheme'
 
-interface MuiThemeProviderProps {
+type MuiThemeProviderProps = {
 	children: React.ReactNode
 }
 

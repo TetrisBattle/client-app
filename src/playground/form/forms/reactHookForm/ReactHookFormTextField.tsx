@@ -8,7 +8,7 @@ import {
 } from 'react-hook-form'
 import { isDecimal } from 'utility/numberHandler'
 
-export interface SelectOption {
+export type SelectOption = {
 	value: string
 	label: string
 }
