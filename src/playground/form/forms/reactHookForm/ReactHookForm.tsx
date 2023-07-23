@@ -20,7 +20,7 @@ export const ReactHookForm = () => {
 		resolver: zodResolver(schema),
 	})
 
-	function handleCancel() {
+	const handleCancel = () => {
 		console.log('Cancel')
 	}
 

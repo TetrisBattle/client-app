@@ -10,7 +10,7 @@ import { Data, defaultData, schema } from '../../validations/yupValidation'
 import { FormikTextField } from './FormikTextField'
 
 export const FormikForm = observer(() => {
-	function handleCancel() {
+	const handleCancel = () => {
 		console.log('Cancel')
 	}
 
@@ -19,7 +19,7 @@ export const FormikForm = observer(() => {
 		await wait(1)
 	}
 
-	async function handleFormSubmit(data: Data) {
+	const handleFormSubmit = async (data: Data) => {
 		await save(data).then(() => {
 			console.log('Saved')
 		})
