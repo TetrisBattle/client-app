@@ -8,6 +8,7 @@ import { FormTitle } from '../../components/FormTitle'
 import { mockOptions } from '../../options'
 import { Data, defaultData, schema } from '../../validations/zodValidation'
 import { ReactHookFormTextField } from './ReactHookFormTextField'
+import { PasswordTextField } from './PasswordTextField'
 
 export const ReactHookForm = () => {
 	const {
@@ -57,13 +58,7 @@ export const ReactHookForm = () => {
 					required
 				/>
 
-				<ReactHookFormTextField
-					control={control}
-					errors={errors}
-					name='password'
-					label='Password'
-					required
-				/>
+				<PasswordTextField control={control} error={errors.password} />
 
 				<ReactHookFormTextField
 					control={control}
@@ -91,6 +86,7 @@ export const ReactHookForm = () => {
 
 				<ReactHookFormTextField
 					control={control}
+					errors={errors}
 					name='description'
 					label='Description'
 					multiline

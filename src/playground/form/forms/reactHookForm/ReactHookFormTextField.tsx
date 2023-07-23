@@ -37,7 +37,7 @@ export const ReactHookFormTextField = <TData extends FieldValues>({
 	const textFieldProps = errors
 		? {
 				error: !!errors[name],
-				helperText: errors[name]?.message as string,
+				helperText: errors[name]?.message as string | undefined,
 				...otherProps,
 		  }
 		: otherProps
