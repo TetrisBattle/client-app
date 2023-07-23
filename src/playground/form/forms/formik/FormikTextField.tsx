@@ -1,17 +1,12 @@
-import { MenuItem, TextField, TextFieldProps } from '@mui/material'
+import { TextField } from '@mui/material'
+import { Select, SelectProps } from 'components/Select'
 import { useField } from 'formik'
 import { isDecimal } from 'utility/numberHandler'
+import { PartialKey } from 'utility/typeHandler'
 
-export type SelectOption = {
-	value: string
-	label: string
-}
-
-type FormikTextFieldProps = Omit<TextFieldProps, 'select'> & {
+type FormikTextFieldProps = PartialKey<SelectProps, 'options'> & {
 	name: string
 	isDecimalInput?: boolean
-	options?: SelectOption[]
-	addEmptyOption?: boolean
 }
 
 export const FormikTextField = ({
@@ -45,14 +40,12 @@ export const FormikTextField = ({
 
 	if (options) {
 		return (
-			<TextField {...field} {...textFieldProps} select>
-				{addEmptyOption && <MenuItem value=''>&nbsp;</MenuItem>}
-				{options.map((option) => (
-					<MenuItem key={option.value} value={option.value}>
-						{option.label}
-					</MenuItem>
-				))}
-			</TextField>
+			<Select
+				{...field}
+				{...textFieldProps}
+				options={options}
+				addEmptyOption={addEmptyOption}
+			/>
 		)
 	}
 

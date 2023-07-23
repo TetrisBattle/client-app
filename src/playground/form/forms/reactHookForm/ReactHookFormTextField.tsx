@@ -1,4 +1,5 @@
-import { MenuItem, TextField, TextFieldProps } from '@mui/material'
+import { TextField } from '@mui/material'
+import { Select, SelectProps } from 'components/Select'
 import {
 	Control,
 	Controller,
@@ -7,22 +8,16 @@ import {
 	Path,
 } from 'react-hook-form'
 import { isDecimal } from 'utility/numberHandler'
+import { PartialKey } from 'utility/typeHandler'
 
-export type SelectOption = {
-	value: string
-	label: string
-}
-
-export type ReactHookFormTextFieldProps<TData extends FieldValues> = Omit<
-	TextFieldProps,
-	'select'
+export type ReactHookFormTextFieldProps<TData extends FieldValues> = PartialKey<
+	SelectProps,
+	'options'
 > & {
 	control: Control<TData>
 	errors?: FieldErrors<TData>
 	name: Path<TData>
 	isDecimalInput?: boolean
-	options?: SelectOption[]
-	addEmptyOption?: boolean
 }
 
 export const ReactHookFormTextField = <TData extends FieldValues>({
@@ -68,14 +63,12 @@ export const ReactHookFormTextField = <TData extends FieldValues>({
 				control={control}
 				name={name}
 				render={({ field }) => (
-					<TextField {...field} select {...textFieldProps}>
-						{addEmptyOption && <MenuItem value=''>&nbsp;</MenuItem>}
-						{options.map((option) => (
-							<MenuItem key={option.value} value={option.value}>
-								{option.label}
-							</MenuItem>
-						))}
-					</TextField>
+					<Select
+						{...field}
+						{...textFieldProps}
+						options={options}
+						addEmptyOption={addEmptyOption}
+					/>
 				)}
 			/>
 		)
