@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-import { useStore } from 'contexts/useStore'
+import { useStore } from 'hooks/useStore'
 import { observer } from 'mobx-react-lite'
 
 export const Home = observer(() => {
