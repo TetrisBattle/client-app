@@ -23,18 +23,18 @@ export const schema = z.object({
 
 export type Data = z.infer<typeof schema>
 
-export const defaultData: Data = {
-	email: '',
-	password: '',
-	option: '',
-	price: '',
-	description: '',
-}
-
 // export const defaultData: Data = {
-// 	email: 'test@test.com',
-// 	password: 'Password123!',
+// 	email: '',
+// 	password: '',
 // 	option: '',
-// 	price: '20',
+// 	price: '',
 // 	description: '',
 // }
+
+export const defaultData: Data = {
+	email: 'test@test.com',
+	password: 'Password123!',
+	option: '',
+	price: '20',
+	description: '',
+}
