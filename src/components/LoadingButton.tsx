@@ -17,8 +17,10 @@ export const LoadingButton = ({
 			ref={loadingButtonRef}
 			{...props}
 			sx={{
-				minWidth: 'fit-content',
-				width: loadingButtonRef.current?.clientWidth,
+				width: loadingButtonRef.current
+					? // +1 to fix rounding issues
+					  loadingButtonRef.current.clientWidth + 1
+					: null,
 				height: loadingButtonRef.current?.clientHeight,
 				...props.sx,
 			}}
