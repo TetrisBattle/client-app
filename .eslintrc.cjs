@@ -13,7 +13,7 @@ module.exports = {
 		'react-refresh/only-export-components': 'warn',
 		'prettier/prettier': 'warn',
 		'no-debugger': 'warn',
-		'no-console': 'warn',
+		'no-console': ['warn', { 'allow': ['error'] }],
 		'@typescript-eslint/no-empty-function': 'warn',
 	},
 }
