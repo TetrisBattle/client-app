@@ -1,5 +1,5 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
-import { IconButton, Menu, MenuItem } from '@mui/material'
+import { IconButton, Menu, MenuItem } from '@thng/react'
 import { RouteOption, routeToTitle } from 'app/Routes'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'

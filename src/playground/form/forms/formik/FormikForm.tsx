@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import { Box, Button, InputAdornment } from '@mui/material'
-import { LoadingButton } from 'components/LoadingButton'
+import { Box, Button, InputAdornment } from '@thng/react'
+import { LoadingButton, wait } from '@thng/react'
 import { Formik } from 'formik'
 import { observer } from 'mobx-react-lite'
-import { wait } from 'utility/debugTools'
 import { FormTitle } from '../../components/FormTitle'
 import { mockOptions } from '../../options'
 import { Data, defaultData, schema } from '../../validations/yupValidation'
@@ -96,7 +95,7 @@ export const FormikForm = observer(() => {
 							</Button>
 
 							<LoadingButton
-								loading={isSubmitting}
+								isLoading={isSubmitting}
 								type='submit'
 								disabled={!isValid || isSubmitting || !dirty}
 							>

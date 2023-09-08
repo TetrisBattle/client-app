@@ -1,8 +1,6 @@
-import { TextField } from '@mui/material'
-import { Select, SelectProps } from 'components/Select'
+import { TextField } from '@thng/react'
+import { PartialKey, Select, SelectProps, isDecimal } from '@thng/react'
 import { useField } from 'formik'
-import { isDecimal } from 'utility/numberHandler'
-import { PartialKey } from 'utility/typeHandler'
 
 type FormikTextFieldProps = PartialKey<SelectProps, 'options'> & {
 	name: string

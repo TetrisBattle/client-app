@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button } from '@thng/react'
 import { RouteOption, routeToTitle } from 'app/Routes'
 import { NavLink } from 'react-router-dom'
 

@@ -1,5 +1,5 @@
-import { TextField } from '@mui/material'
-import { Select, SelectProps } from 'components/Select'
+import { TextField } from '@thng/react'
+import { PartialKey, Select, SelectProps, isDecimal } from '@thng/react'
 import {
 	Control,
 	Controller,
@@ -7,8 +7,6 @@ import {
 	FieldValues,
 	Path,
 } from 'react-hook-form'
-import { isDecimal } from 'utility/numberHandler'
-import { PartialKey } from 'utility/typeHandler'
 
 export type ReactHookFormTextFieldProps<TData extends FieldValues> = PartialKey<
 	SelectProps,

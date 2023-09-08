@@ -1,4 +1,4 @@
-import { Box, TextField, Typography } from '@mui/material'
+import { Box, TextField, Typography } from '@thng/react'
 import {
 	Control,
 	Controller,
@@ -17,14 +17,14 @@ import {
 } from 'playground/form/validations/regex'
 
 export type PasswordTextFieldProps<
-	TData extends FieldValues & { password: string }
+	TData extends FieldValues & { password: string },
 > = {
 	control: Control<TData>
 	error?: FieldError
 }
 
 export const PasswordTextField = <
-	TData extends FieldValues & { password: string }
+	TData extends FieldValues & { password: string },
 >({
 	control,
 	error,

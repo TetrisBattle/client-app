@@ -1,16 +1,16 @@
 import { router } from 'app/Routes'
-import { StoreProvider } from 'providers/StoreProvider'
-import { MuiThemeProvider } from 'providers/MuiThemeProvider'
+import { StoreProvider } from 'stores/StoreProvider'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
+import { ThemeProvider } from 'ThemeProvider'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<StoreProvider>
-			<MuiThemeProvider>
+			<ThemeProvider>
 				<RouterProvider router={router} />
-			</MuiThemeProvider>
+			</ThemeProvider>
 		</StoreProvider>
 	</React.StrictMode>
 )

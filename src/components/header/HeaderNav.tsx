@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box } from '@thng/react'
 import { RouteOption } from 'app/Routes'
 import { HeaderButton } from './HeaderButton'
 import { HeaderMenu } from './HeaderMenu'

@@ -1,13 +1,13 @@
 import { makeAutoObservable } from 'mobx'
 
 export class AppStore {
-	isDarkTheme = true
+	isDarkMode = true
 
 	constructor() {
 		makeAutoObservable(this)
 	}
 
-	toggleDarkTheme = () => {
-		this.isDarkTheme = !this.isDarkTheme
+	toggleDarkMode = () => {
+		this.isDarkMode = !this.isDarkMode
 	}
 }

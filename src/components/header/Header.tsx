@@ -1,6 +1,6 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography } from '@thng/react'
 import { RouteOption } from 'app/Routes'
-import { Logo } from 'assets/Logo.tsx'
+import { Logo } from '@thng/react'
 import { DarkThemeIconButton } from '../DarkThemeIconButton'
 import { HeaderNav } from './HeaderNav'
 
@@ -14,7 +14,7 @@ export const Header = () => {
 	return (
 		<AppBar>
 			<Toolbar sx={{ height: 64, px: 1 }}>
-				<Logo width={48} height={48} />
+				<Logo size={48} />
 				<Typography
 					variant='h1'
 					sx={{

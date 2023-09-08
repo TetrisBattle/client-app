@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Box, Button, InputAdornment } from '@mui/material'
-import { LoadingButton } from 'components/LoadingButton'
+import { Box, Button, InputAdornment } from '@thng/react'
+import { LoadingButton, wait } from '@thng/react'
 import { useForm } from 'react-hook-form'
-import { wait } from 'utility/debugTools'
 import { FormTitle } from '../../components/FormTitle'
 import { mockOptions } from '../../options'
 import { Data, defaultData, schema } from '../../validations/zodValidation'
@@ -105,7 +104,7 @@ export const ReactHookForm = () => {
 					</Button>
 
 					<LoadingButton
-						loading={isSubmitting}
+						isLoading={isSubmitting}
 						type='submit'
 						disabled={!isValid || isSubmitting || !isDirty}
 					>

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography } from '@thng/react'
 
 export const FormTitle = ({ children }: { children: React.ReactNode }) => {
 	return (
