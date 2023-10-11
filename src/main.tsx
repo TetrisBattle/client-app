@@ -1,15 +1,14 @@
-import { router } from 'app/Routes'
 import { StoreProvider } from 'stores/StoreProvider'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from 'ThemeProvider'
+import { App } from 'App'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<StoreProvider>
 			<ThemeProvider>
-				<RouterProvider router={router} />
+				<App />
 			</ThemeProvider>
 		</StoreProvider>
 	</React.StrictMode>

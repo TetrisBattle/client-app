@@ -1,4 +1,4 @@
-import { App } from 'app/App'
+import { Root } from 'App/Root'
 import { About } from 'features/About'
 import { Home } from 'features/Home'
 import { NotFound } from 'features/NotFound'
@@ -10,10 +10,10 @@ export enum RouteOption {
 	About = '/about',
 }
 
-export const routes: RouteObject[] = [
+const routes: RouteObject[] = [
 	{
 		path: '/',
-		element: <App />,
+		element: <Root />,
 		children: [
 			{ path: RouteOption.NotFound, element: <NotFound /> },
 			{
