@@ -5,11 +5,7 @@ import { DarkThemeIconButton } from '../DarkThemeIconButton'
 import { HeaderNav } from './HeaderNav'
 
 export const Header = () => {
-	const headerRoutes = [
-		RouteOption.Home,
-		RouteOption.About,
-		RouteOption.Forms,
-	]
+	const headerRoutes = [RouteOption.Home, RouteOption.About]
 
 	return (
 		<AppBar>
