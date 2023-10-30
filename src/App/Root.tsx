@@ -1,4 +1,4 @@
-import { Header } from 'components/Header-temp'
+import { Header } from 'components/Header'
 import { Outlet } from 'react-router-dom'
 
 export const Root = () => {

@@ -1,4 +1,4 @@
-import { Root } from 'App-temp/Root'
+import { Root } from 'App/Root'
 import { About } from 'features/About'
 import { Home } from 'features/Home'
 import { NotFound } from 'features/NotFound'
