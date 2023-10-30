@@ -2,7 +2,7 @@ import { StoreProvider } from 'stores/StoreProvider'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ThemeProvider } from 'ThemeProvider'
-import { App } from 'App'
+import { App } from 'App-temp'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
