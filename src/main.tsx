@@ -1,7 +1,7 @@
-import { StoreProvider } from 'stores/StoreProvider'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ThemeProvider } from 'ThemeProvider'
+import { StoreProvider } from 'stores/StoreProvider'
+import { ThemeProvider } from 'Theme'
 import { App } from 'App'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
