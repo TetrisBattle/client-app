@@ -23,6 +23,6 @@
 		"react-router-dom": "^6.11.1"
 	},
 	"devDependencies": {
-		"@thng/dev": "^1.0.1"
+		"@thng/dev": "^1.1.0"
 	}
 }
