@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@thng/react'
-import { RouteOption } from 'App/Routes'
+import { RouteOption } from 'Routes'
 import { Link } from 'react-router-dom'
 
 export const NotFound = () => {

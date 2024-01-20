@@ -3,7 +3,7 @@ import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { Outlet } from 'react-router-dom'
 
-export const Root = () => {
+export const App = () => {
 	return (
 		<Box
 			sx={{

@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
-import { Root } from 'App/Root'
+import { App } from 'App'
 import { NotFound } from 'features/NotFound'
 import { Home } from 'features/Home'
 import { About } from 'features/About'
@@ -13,7 +13,7 @@ export enum RouteOption {
 export const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Root />,
+		element: <App />,
 		children: [
 			{ path: RouteOption.NotFound, element: <NotFound /> },
 			{

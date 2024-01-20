@@ -1,5 +1,5 @@
 import { Button } from '@thng/react'
-import { RouteOption, routeToTitle } from 'App/Routes'
+import { RouteOption, routeToTitle } from 'Routes'
 import { NavLink } from 'react-router-dom'
 
 type HeaderButtonProps = {

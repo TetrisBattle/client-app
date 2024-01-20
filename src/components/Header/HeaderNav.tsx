@@ -1,5 +1,5 @@
 import { Box } from '@thng/react'
-import { RouteOption } from 'App/Routes'
+import { RouteOption } from 'Routes'
 import { HeaderButton } from './HeaderButton'
 import { HeaderMenu } from './HeaderMenu'
 

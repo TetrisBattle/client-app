@@ -1,5 +1,5 @@
 import { AppBar, Box, Logo, Toolbar, Typography } from '@thng/react'
-import { RouteOption } from 'App/Routes'
+import { RouteOption } from 'Routes'
 import { DarkThemeIconButton } from 'components/DarkThemeIconButton'
 import { HeaderNav } from './HeaderNav'
 
