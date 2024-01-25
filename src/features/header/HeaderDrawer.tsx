@@ -1,18 +1,17 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
-import { IconButton, Menu, MenuItem } from '@thng/react'
+import { Drawer, IconButton, Menu, MenuItem } from '@thng/react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { HeaderRoutes } from './Header'
 
-export const HeaderMenu = ({ routes }: { routes: HeaderRoutes }) => {
-	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+export const HeaderDrawer = ({ routes }: { routes: HeaderRoutes }) => {
+	const [open, setOpen] = useState(false)
+	const toggleOpen = () => setOpen((prev) => !prev)
 
 	return (
 		<>
 			<IconButton
-				onClick={(e: React.MouseEvent<HTMLElement>) =>
-					setAnchorEl(e.currentTarget)
-				}
+				onClick={toggleOpen}
 				sx={{
 					color: 'inherit',
 					display: { sm: 'none' },
@@ -21,17 +20,13 @@ export const HeaderMenu = ({ routes }: { routes: HeaderRoutes }) => {
 				<MenuIcon />
 			</IconButton>
 
-			<Menu
-				anchorEl={anchorEl}
-				open={!!anchorEl}
-				onClick={() => setAnchorEl(null)}
-				onClose={() => setAnchorEl(null)}
-			>
+			<Drawer anchor='right' open={!!open} onClose={toggleOpen}>
 				{routes.map(({ route, label }) => (
 					<MenuItem
 						key={route}
 						component={NavLink}
 						to={route}
+						onClick={toggleOpen}
 						sx={{
 							'&.active': (theme) => ({
 								color: theme.palette.primary.main,
@@ -41,7 +36,7 @@ export const HeaderMenu = ({ routes }: { routes: HeaderRoutes }) => {
 						{label}
 					</MenuItem>
 				))}
-			</Menu>
+			</Drawer>
 		</>
 	)
 }

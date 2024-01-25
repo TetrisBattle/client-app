@@ -2,7 +2,7 @@ import { AppBar, Box, Logo, Toolbar, Typography } from '@thng/react'
 import { RouteOption } from 'Routes'
 import { DarkThemeIconButton } from 'components/DarkThemeIconButton'
 import { HeaderButtons } from './HeaderButtons'
-import { HeaderMenu } from './HeaderMenu'
+import { HeaderDrawer } from './HeaderDrawer'
 
 export type HeaderRoutes = {
 	route: RouteOption
@@ -36,7 +36,7 @@ export const Header = () => {
 					}}
 				>
 					<HeaderButtons routes={headerRoutes} />
-					<HeaderMenu routes={headerRoutes} />
+					<HeaderDrawer routes={headerRoutes} />
 					<DarkThemeIconButton sx={{ color: 'inherit' }} />
 				</Box>
 			</Toolbar>
