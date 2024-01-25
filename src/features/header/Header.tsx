@@ -1,10 +1,19 @@
 import { AppBar, Box, Logo, Toolbar, Typography } from '@thng/react'
 import { RouteOption } from 'Routes'
 import { DarkThemeIconButton } from 'components/DarkThemeIconButton'
-import { HeaderNav } from './HeaderNav'
+import { HeaderButtons } from './HeaderButtons'
+import { HeaderMenu } from './HeaderMenu'
+
+export type HeaderRoutes = {
+	route: RouteOption
+	label: string
+}[]
 
 export const Header = () => {
-	const headerRoutes = [RouteOption.Home, RouteOption.About]
+	const headerRoutes: HeaderRoutes = [
+		{ route: RouteOption.Home, label: 'Home' },
+		{ route: RouteOption.About, label: 'About' },
+	]
 
 	return (
 		<AppBar>
@@ -26,7 +35,8 @@ export const Header = () => {
 						justifyContent: 'flex-end',
 					}}
 				>
-					<HeaderNav routes={headerRoutes} />
+					<HeaderButtons routes={headerRoutes} />
+					<HeaderMenu routes={headerRoutes} />
 					<DarkThemeIconButton sx={{ color: 'inherit' }} />
 				</Box>
 			</Toolbar>

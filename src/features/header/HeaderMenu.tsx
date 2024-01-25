@@ -1,14 +1,10 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
 import { IconButton, Menu, MenuItem } from '@thng/react'
-import { RouteOption, routeToTitle } from 'Routes'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { HeaderRoutes } from './Header'
 
-type HeaderMenuProps = {
-	routes: RouteOption[]
-}
-
-export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
+export const HeaderMenu = ({ routes }: { routes: HeaderRoutes }) => {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	return (
@@ -31,9 +27,9 @@ export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 				onClick={() => setAnchorEl(null)}
 				onClose={() => setAnchorEl(null)}
 			>
-				{routes.map((route) => (
+				{routes.map(({ route, label }) => (
 					<MenuItem
-						key={'headerMenuItem-' + route}
+						key={route}
 						component={NavLink}
 						to={route}
 						sx={{
@@ -42,7 +38,7 @@ export const HeaderMenu = ({ routes }: HeaderMenuProps) => {
 							}),
 						}}
 					>
-						{routeToTitle(route)}
+						{label}
 					</MenuItem>
 				))}
 			</Menu>

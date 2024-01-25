@@ -26,7 +26,3 @@ export const router = createBrowserRouter([
 		],
 	},
 ])
-
-export const routeToTitle = (route: RouteOption): string => {
-	return route[1].toUpperCase() + route.slice(2)
-}
