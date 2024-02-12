@@ -1,5 +1,5 @@
 import { Menu as MenuIcon } from '@mui/icons-material'
-import { Drawer, IconButton, Menu, MenuItem } from '@thng/react'
+import { Drawer, IconButton, MenuItem } from '@thng/react'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { HeaderRoutes } from './Header'

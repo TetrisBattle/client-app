@@ -1,5 +1,4 @@
-import { Box } from '@mui/material'
-import { Typography } from '@thng/react'
+import { Box, Typography } from '@mui/material'
 
 export const Footer = () => {
 	return (
@@ -12,8 +11,7 @@ export const Footer = () => {
 				alignItems: 'center',
 				py: 2,
 				px: 3,
-				borderTop: (theme) =>
-					`1px solid ${theme.palette.secondary.main}`,
+				borderTop: '1px solid gray',
 			}}
 		>
 			<Typography>Footer</Typography>

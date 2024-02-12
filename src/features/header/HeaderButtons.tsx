@@ -22,8 +22,7 @@ export const HeaderButtons = ({ routes }: { routes: HeaderRoutes }) => {
 					variant='text'
 					sx={(theme) => ({
 						fontSize: '1.25rem',
-						fontWeight: (theme) =>
-							theme.typography.fontWeightRegular,
+						fontWeight: theme.typography.fontWeightRegular,
 						color: 'inherit',
 						'&.active': theme.palette.mode === 'dark' && {
 							color: theme.palette.primary.main,
